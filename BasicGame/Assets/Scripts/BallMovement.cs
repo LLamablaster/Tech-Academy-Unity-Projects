@@ -9,7 +9,7 @@ public class BallMovement : MonoBehaviour
 
     public float speed;
     private Rigidbody rb;
-    public GameObject sceneswitcher;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +29,7 @@ public class BallMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Goal")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
     }
 }
