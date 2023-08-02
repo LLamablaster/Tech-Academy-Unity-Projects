@@ -20,7 +20,7 @@ public class NPCController : MonoBehaviour
 
     private void Awake()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         if (agent != null ){agentspeed = agent.speed;}
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -50,5 +50,10 @@ public class NPCController : MonoBehaviour
             agent.destination = player.position;
             agent.speed = agentspeed;
         }
+    }
+
+    private void Update()
+    {
+        anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 }
